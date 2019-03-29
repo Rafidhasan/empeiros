@@ -1,0 +1,3 @@
+//init sidenav
+var sidenav = document.querySelectorAll('.sidenav');
+M.Sidenav.init(sidenav);
