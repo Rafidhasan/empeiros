@@ -48,11 +48,43 @@
         <!--navbar-->
 
         <div class="section_cover-wrapper">
-            <div class="section_cover-wrapper--bg" id="particles-js" style="overflow: hidden !important;">
-                <h1 class="section_cover-wrapper--bg---header" id="words" style="display: inline-block !important;">
-                    <span class="section_cover-wrapper--bg---header_word" id="word" style="disply:inline-block !important">We can</span>
-                    <span class="section_cover-wrapper--bg---header_word" id="word" style="disply:inline-block !important">do it better</span>
+            <div class="section_cover-wrapper--bg" id="particles-js">
+                <h1 class="section_cover-wrapper--bg---header" id="words">
+                    <span class="section_cover-wrapper--bg---header_word" id="word">We can</span>
+                    <span class="section_cover-wrapper--bg---header_word" id="word">do it better</span>
                 </h1>
+                <div class="section_cover-wrapper--content">
+                    <p class="section_cover-wrapper--content---text">
+                            We offer professional web design services at affordable rates to help your business attract more visitors and keep them on your site! More than beautiful design, we build websites with a complete strategy designed to turn your site visitors into customers.
+                            As many as 82% of customers are doing online research before they contact you about products or services. Is your website doing enough to turn those researchers into buyers?
+                            We can help! We are passionate about making beautiful websites the help you attract and retain customers for your small business. 
+                    </p>
+                </div>
+                <div class="row">
+                        <div class="col s6 offset-s6">
+                            
+                        </div>
+                    </div>
+                <div class="section_cover-wrapper--button">
+                    
+                    <a href="#about" class="section_cover-wrapper--button_one" style="color: white">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                            About
+                    </a>
+                </div>
+
+                <div class="section_cover-wrapper--button">
+                    <a href="#portfolio" class="section_cover-wrapper--button_two" style="color: white">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                            Portfolio
+                    </a>
+                </div>
             </div>   
         </div>
 
@@ -75,22 +107,45 @@
 
     <script>
         anime.timeline({loop: false})
-  .add({
-    targets: '#words #word',
-    scale: [14,1],
-    opacity: [0,1],
-    easing: "easeOutCirc",
-    duration: 800,
-    delay: function(el, i) {
-      return 800 * i;
-    }
-  }).add({
-    targets: '#words',
-    opacity: 1,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
+            .add({
+                targets: '#words #word',
+                scale: [14,1],
+                opacity: [0,1],
+                easing: "easeOutCirc",
+                duration: 800,
+                delay: function(el, i) {
+                return 800 * i;
+                }
+            }).add({
+                targets: '#words',
+                opacity: 1,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+        });
+    </script>
+
+    <script>
+        var wrapper = document.querySelector(".section_cover-wrapper--content");
+        var text = document.querySelector(".section_cover-wrapper--content---text");
+
+        var textCont = text.textContent;
+        text.style.display = "none";
+
+        for (var i = 0; i < textCont.length; i++) {
+        (function(i) {
+            setTimeout(function() {
+            // Created textNode to append
+            var texts = document.createTextNode(textCont[i])
+            var span = document.createElement('span');
+            span.appendChild(texts);
+
+            span.classList.add("wave");
+            wrapper.appendChild(span);
+
+            }, 15 * i);
+        }(i));
+        }
     </script>
   </body>
 </html>
