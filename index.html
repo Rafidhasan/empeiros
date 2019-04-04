@@ -1,165 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="style/style.css">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="style/style.css">
-  </head>
+  <style>
+    #drawer{
+        background: rgba(240, 240, 240, 1);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+          <!--
+              ==================
+                    Navbar
+              ==================
+          -->
+        <template class="section section_nav" id="home">
+            <v-toolbar clipped-left class="section_navbar black text--white">
+                <v-toolbar-side-icon  @click.stop="drawer = !drawer" class="hidden-md-and-up section_navbar-sidebarButton" style="color: #fff;"></v-toolbar-side-icon>
+                <v-toolbar-title class="section_navbar-logoWrapper">
+                    <img class="section_navbar-logoWrapper--img" src="img/logo.png" alt="empeiros_logo">
+                </v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-toolbar-items class="hidden-sm-and-down section_navbar-menuList">
+                  <v-btn flat class="section_navbar-menuList--item" id="home" style="color: #fff;">Home</v-btn>
+                  <v-btn flat class="section_navbar-menuList--item" id="service" style="color: #fff;">Service</v-btn>
+                  <v-btn flat class="section_navbar-menuList--item" id="portfolio" style="color: #fff;">Portfolio</v-btn>
+                  <v-btn flat class="section_navbar-menuList--item" id="about" style="color: #fff;">About</v-btn>
+                  <v-btn flat class="section_navbar-menuList--item" id="contact" style="color: #fff;">Contact</v-btn>
+                </v-toolbar-items>
+              </v-toolbar>
+              <!--
+              ==================
+                    Sidebar
+              ==================
+                -->
+                <v-navigation-drawer
+                  v-model="drawer"
+                  temporary
+                  absolute
+                  width = "200"
+                  id = "drawer"
+                  class="black"
+                >
+                    <center>
+                        <v-btn flat class="section_navbar-menuList--item"></v-btn>
+                        <v-btn flat class="section_navbar-menuList--item">
+                            <img class="section_navbar-logoWrapper--img" src="img/logo.png" alt="empeiros_logo" style="height: 40px; width: auto;">
+                        </v-btn>
+                        <v-btn flat class="section_navbar-menuList--item"></v-btn>
+                        <v-btn flat class="section_navbar-menuList--item" id="home" style="color: #fff;">Home</v-btn>
+                        <v-btn flat class="section_navbar-menuList--item" id="service" style="color: #fff;">Service</v-btn>
+                        <v-btn flat class="section_navbar-menuList--item" id="portfolio" style="color: #fff;">Portfolio</v-btn>
+                        <v-btn flat class="section_navbar-menuList--item" id="about" style="color: #fff;">About</v-btn>
+                        <v-btn flat class="section_navbar-menuList--item" id="contact" style="color: #fff;">Contact</v-btn>
+                    </center>
+                </v-navigation-drawer>
+          </template>
 
-  <body>
-    <!--cover section-->
-    <section class="section section_cover">
-        <!--navbar-->
-        <nav class="fixed-top navbar">
-            <div class="nav-wrapper">
-                <a href="#home" class="brand-logo">
-                    <img src="img/logo.png" alt="empeiros" style="height: 70px; width: auto;">
-                </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#Services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-            
-        <ul class="black sidenav" id="mobile-demo">
-            <li class="sidenav_element">
-                <a class="sidenav_element-link" href="#Services">Services</a>
-            </li>
-            <li class="sidenav_element">
-                <a class="sidenav_element-link" href="#home">Home</a>
-            </li>
-            <li class="sidenav_element">
-                <a class="sidenav_element-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="sidenav_element">
-                <a class="sidenav_element-link" href="#contact">#Contact</a>
-            </li>
-        </ul>
+          <!--
+            ==============
+                cover
+            ==============
+          -->
+          <template class="section section_cover">
+              <v-jumbotron class="section_cover-container">
+                <v-container fill-height class="section_cover-container--overlay">
+                  <v-layout align-center class="section_cover-container--overlay_layout">
+                    <v-flex>
+                      <h3 class="display-3">Empeiros</h3>
+                      <span class="subheading">We are a holistic web design company that offers web design at awesome prices. Our web design experience is as follows: Static Website, Dynamic Website, E-Commerce Website design & development, Portal Website design & Development, Custom design & Development. Explore our extensive portfolio and list of services to compare work, prices, and timeliness to get the best for your business.</span>
+                      <br>
+                      <br>
+                      <br>
+                      <div class="title mb-3">We can do better</div>
+                      
+                      <v-btn
+                        class="mx-0"
+                        color="primary"
+                        large
+                      >
+                        See more
+                      </v-btn>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-jumbotron>
+              <v-icon class="section_cover-icon" large white>info</v-icon>
+            </template>
+      </v-content>
+    </v-app>
+  </div>
 
-        <!--navbar-->
-
-        <div class="section_cover-wrapper">
-            <div class="section_cover-wrapper--bg" id="particles-js">
-                <h1 class="section_cover-wrapper--bg---header" id="words">
-                    <span class="section_cover-wrapper--bg---header_word" id="word">We can</span>
-                    <span class="section_cover-wrapper--bg---header_word" id="word">do it better</span>
-                </h1>
-                <br>
-                <div class="section_cover-wrapper--content">
-                    <p class="section_cover-wrapper--content---text">
-                            We offer professional web design services at affordable rates to help your business attract more visitors and keep them on your site! More than beautiful design, we build websites with a complete strategy designed to turn your site visitors into customers.
-                            As many as 82% of customers are doing online research before they contact you about products or services. Is your website doing enough to turn those researchers into buyers?
-                            We can help! We are passionate about making beautiful websites the help you attract and retain customers for your small business. 
-                    </p>
-                </div>
-                
-
-                <div class="row">
-                        <div class="grid-example col s12 m6">
-                            
-                        </div>
-                </div>
-
-
-                <div class="section_cover-wrapper--button">
-                    
-                    <a href="#about" class="section_cover-wrapper--button_one" style="color: white">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                            About
-                    </a>
-                </div>
-
-                <div class="section_cover-wrapper--button">
-                    <a href="#portfolio" class="section_cover-wrapper--button_two" style="color: white">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                            Portfolio
-                    </a>
-                </div>
-            </div>   
-        </div>
-
-    </section>
-
-   <!--cover section-->
-
-
-   <!--services section-->
-
-    <section class="section section_services">
-        
-    </section>
-
-   <!--services section-->
-    
-
-    
-    <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--particlle.min.js-->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!--init particle js-->
-    <!-- <script src="js/particle.js"></script> -->
-    <!--init anime js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <!--default materialize js-->
-    <script src="js/main.js"></script>
-
-    <script>
-        anime.timeline({loop: false})
-            .add({
-                targets: '#words #word',
-                scale: [14,1],
-                opacity: [0,1],
-                easing: "easeOutCirc",
-                duration: 800,
-                delay: function(el, i) {
-                return 800 * i;
-                }
-            }).add({
-                targets: '#words',
-                opacity: 1,
-                duration: 1000,
-                easing: "easeOutExpo",
-                delay: 1000
-        });
-    </script>
-
-    <script>
-        var wrapper = document.querySelector(".section_cover-wrapper--content");
-        var text = document.querySelector(".section_cover-wrapper--content---text");
-
-        var textCont = text.textContent;
-        text.style.display = "none";
-
-        for (var i = 0; i < textCont.length; i++) {
-        (function(i) {
-            setTimeout(function() {
-            // Created textNode to append
-            var texts = document.createTextNode(textCont[i])
-            var span = document.createElement('span');
-            span.appendChild(texts);
-
-            span.classList.add("wave");
-            wrapper.appendChild(span);
-
-            }, 15 * i);
-        }(i));
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script>
+    new Vue ({
+        el: "#app",
+         data: {
+            drawer: null 
         }
-    </script>
-  </body>
+    })
+  </script>
+</body>
 </html>
