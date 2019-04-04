@@ -50,7 +50,7 @@
   left: 50%;
   transform: translate(-50%, -35%);
   color: #fff;
-  padding: 30px 60px;
+  padding: 20px 40px;
   font-size: 25px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -61,16 +61,16 @@
 }
 .section_cover-container--overlay_btn:active {
   position: absolute;
-  top: 60%;
+  top: 65.5%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -35%);
   color: #fff;
-  padding: 30px 60px;
+  padding: 20px 40px;
   font-size: 25px;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
   overflow: hidden;
   transition: 0.3s ease-in;
 }
@@ -161,11 +161,5 @@
   transform: translate(0%, -88%);
   font-size: 25em !important;
 }
-
-/*
-===============
-    responsive
-================
-*/
 
 /*# sourceMappingURL=style.css.map */
