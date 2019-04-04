@@ -22,7 +22,7 @@
               ==================
           -->
         <template class="section section_nav" id="home">
-            <v-toolbar clipped-left class="section_navbar black text--white">
+            <v-toolbar clipped-left class="section_navbar grey darken-4 text--white">
                 <v-toolbar-side-icon  @click.stop="drawer = !drawer" class="hidden-md-and-up section_navbar-sidebarButton" style="color: #fff;"></v-toolbar-side-icon>
                 <v-toolbar-title class="section_navbar-logoWrapper">
                     <img class="section_navbar-logoWrapper--img" src="img/logo.png" alt="empeiros_logo">
@@ -70,7 +70,7 @@
             ==============
           -->
           <template class="section section_cover">
-              <v-jumbotron class="section_cover-container">
+              <v-responsive class="section_cover-container">
                 <v-container fill-height class="section_cover-container--overlay">
                   <v-layout align-center class="section_cover-container--overlay_layout">
                     <v-flex>
@@ -91,7 +91,7 @@
                     </v-flex>
                   </v-layout>
                 </v-container>
-              </v-jumbotron>
+              </v-responsive>
               <v-icon class="section_cover-icon" large white>info</v-icon>
             </template>
       </v-content>
