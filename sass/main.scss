@@ -24,8 +24,9 @@
         &-container {
             height: 90vh !important;
             background-color: #2D2D2D;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 70vh);
             &--overlay_layout {
-                margin-top: -200px;
+                margin-top: -300px;
                 color: #fff;
                 text-align: center;
                 & h3 {
@@ -35,7 +36,7 @@
         }
         &-icon {
             position: absolute;
-            top: 80%;
+            top: 90%;
             left: 3%;
             transform: translate(-0%, -88%);
             font-size: 25em !important;
